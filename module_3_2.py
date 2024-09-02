@@ -3,8 +3,11 @@ def send_email(massage, recipient, sender = 'university.help@gmail.com'):
          print('Невозможно отправить письмо с адреса {} на адрес {}'.format(sender, recipient))
      elif sender == recipient:
          print('Нельзя отправить письмо самому себе!')
-     else:
+     elif 'fan' not in recipient or 'info' not in sender:
          print('Письмо отправлено успешно: nОтправитель: {}nПолучатель: {}nСообщение: {}'.format(sender, recipient, massage))
+     else:
+         print("НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {} на адрес {}.".format(sender, recipient))
+          
 
 send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
 send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
